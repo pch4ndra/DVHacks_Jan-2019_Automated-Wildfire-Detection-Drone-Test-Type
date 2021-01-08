@@ -1,0 +1,14 @@
+{
+  "name": "Examples",
+  "version": "1.0.0",
+  "main": "node_modules",
+  "description": "JavaScript SDK development Examples",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "0.9.0"
+  },
+  "scripts": {
+    "start": "http-server --cors='TomTom-Api-User-Agent' .",
+    "replaceKeys": "node placeholder-replacer.js"
+  }
+}

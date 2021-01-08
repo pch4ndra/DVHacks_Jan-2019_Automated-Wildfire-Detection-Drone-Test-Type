@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class='use-all-space'>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset='UTF-8'>
+    <title>Marker clustering</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <link rel='stylesheet' type='text/css' href='sdk/map.css'/>
+    <link rel='stylesheet' type='text/css' href='css/elements.css'/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/light-box.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script type='text/javascript' src='js/form.js'></script>
+    <script type='text/javascript' src='sdk/tomtom.min.js'></script>
+</head>
+<body class='use-all-space' class='mybody'>
+    <nav>
+        <div class="logo">
+            <a href="/">Automated Wildfire<em> Detection Drone</em></a>
+        </div>
+        <div class="menu-icon">
+        <span></span>
+      </div>
+    </nav>
+    <div id='map' class='use-all-space'></div>
+    <script>
+        // Define your product name and version
+        tomtom.setProductInfo('MapsWebSDKExamplesSelfhosted', '4.47.2-SNAPSHOT');
+
+        // Creating the map
+
+
+        var map = tomtom.map('map', {
+            key: '4mXdXKAv0CQKru0SpInttSAw2CVOliMz',
+            source: 'vector',
+            basePath: '/sdk'
+        });
+
+        //set center of map
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var center = JSON.parse(xhttp.responseText);
+            map.setView(center, 2)
+        }
+    }
+        xhttp.open("GET", "/data/center", true);
+        xhttp.send();
+
+        // Placing markers
+        
+        var xhttp2 = new XMLHttpRequest();
+        xhttp2.open("GET", "/data/locations", false);
+        xhttp2.send();
+
+        var addressPoints = [];
+        var json_data = xhttp2.responseText.split(','); 
+        while(json_data[0]) {
+          addressPoints.push(json_data.splice(0,3));
+        }
+
+        var markers = tomtom.L.markerClusterGroup();
+        addressPoints.forEach(function(point) {
+            var title = point[2],
+                marker = tomtom.L.marker(new tomtom.L.LatLng(point[0], point[1]), {title: title},{draggable:true});
+            marker.bindPopup(title);//.addTo(map);
+            marker.on('click', function(e) {
+            var coordinate = e.target.getLatLng();
+            window.open("/route?lat="+coordinate.lat+"&lon="+coordinate.lng) 
+        });
+        markers.addLayer(marker);
+        });
+        map.addLayer(markers);
+        //params: ?lat=___&lon=___
+    </script>
+</body>
+</html>

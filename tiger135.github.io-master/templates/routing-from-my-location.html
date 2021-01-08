@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class='use-all-space'>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset='UTF-8'>
+    <title>Routing from my location</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='sdk/map.css') }}"/>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/elements.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}"/>
+    <script type='text/javascript' src="{{ url_for('static', filename='js/form.js') }}"></script>
+    <script type='text/javascript' src="{{ url_for('static', filename='sdk/tomtom.min.js') }}"></script>
+    <style>
+        label {
+            display: flex;
+            align-items: center;
+            margin: 2px;
+        }
+        select {
+            flex: auto;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body class='use-all-space'class='mybody'>
+    <nav>
+        <div class="logo">
+            <a href="index.html">Automated Wildfire<em> Detection Drone</em></a>
+        </div>
+        <div class="menu-icon">
+        <span></span>
+        </div>
+    </nav>
+    <div id='map' class='use-all-space'></div>
+    <script>
+
+        
+/*        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(getPosition);
+          }
+        }
+        function getPosition(position) {
+          var currentLocation = {"lat":position.coords.latitude,"lon":position.coords.longitude};
+        }*/
+        
+
+        //brought in by xhttp
+        // Define your product name and version
+        tomtom.setProductInfo('MapsWebSDKExamplesSelfhosted', '4.47.2-SNAPSHOT');
+        // Setting TomTom keys
+        tomtom.routingKey('4mXdXKAv0CQKru0SpInttSAw2CVOliMz');
+        tomtom.searchKey('4mXdXKAv0CQKru0SpInttSAw2CVOliMz');
+
+        // Creating map
+        var map = tomtom.L.map('map', {
+            key: '4mXdXKAv0CQKru0SpInttSAw2CVOliMz',
+            source: 'vector',
+            basePath: '/sdk'
+        });
+        map.zoomControl.setPosition('topright');
+
+        var unitSelector = tomtom.unitSelector.getHtmlElement(tomtom.globalUnitService);
+        var languageSelector = tomtom.languageSelector.getHtmlElement(tomtom.globalLocaleService, 'search');
+
+        var unitRow = document.createElement('div');
+        var unitLabel = document.createElement('label');
+        unitLabel.innerHTML = 'Unit of measurement';
+        unitLabel.appendChild(unitSelector);
+        unitRow.appendChild(unitLabel);
+        unitRow.className = 'input-container';
+
+        var langRow = document.createElement('div');
+        var langLabel = document.createElement('label');
+        langLabel.innerHTML = 'Search language';
+        langLabel.appendChild(languageSelector);
+        langRow.appendChild(langLabel);
+        langRow.className = 'input-container';
+
+        tomtom.controlPanel({
+            position: 'bottomright',
+            title: 'Settings',
+            collapsed: true
+        })
+            .addTo(map)
+            .addContent(unitRow)
+            .addContent(langRow);
+
+        var destination = { 'lat':{{lat}},'lon':{{lon}} };
+        var route = [{'lat':37.3828011,'lon':-121.952988},destination];
+        var routeOnMapView = tomtom.routeOnMap().addTo(map);
+        routeOnMapView.draw(route);
+        // Adding the route widget
+        
+
+    </script>
+</body>
+</html>

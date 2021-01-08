@@ -1,0 +1,113 @@
+.navbar-nav > li > span > span.caret {
+    border-bottom-color: #FFFFFF;
+    border-top-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.faq .collapsed {
+    display: block !important;
+}
+
+body header.navbar {
+    background-color: #FF4300;
+}
+
+body header.navbar {
+    border-color: #FF4300;
+}
+
+body .navbar-inverse .navbar-toggle, body .navbar-inverse .navbar-collapse:focus, body .navbar-inverse .navbar-toggle:hover, body .navbar-inverse .navbar-toggle:focus, body .navbar-inverse .navbar-nav > .open > a, body .navbar-inverse .navbar-nav > .open > a:hover, body .navbar-inverse .navbar-nav > .open > a:focus, body .navbar-default .navbar-toggle:hover, body .navbar-default .navbar-toggle:active, body .navbar-default .navbar-toggle:focus, body .navbar-default .navbar-collapse, body .navbar-default .navbar-collapse:hover, body .navbar-default .navbar-collapse:focus, body .navbar-default .navbar-nav > .open > a, body .navbar-default .navbar-nav > .open > a:hover, body .navbar-default .navbar-nav > .open > a:focus, body header.navbar.navbar-nav > .open > a, body header.navbar.navbar-nav > .open > a:hover, body header.navbar.navbar-nav > .open > a:focus {
+    border-color: #FF4300;
+    background-color: #FF4300;
+}
+
+body .navbar-inverse .navbar-nav > .open > a:hover {
+    color: #FFFFFF;
+}
+
+body header.navbar .nav > li > a {
+    color: #FFFFFF;
+}
+
+body header.navbar .nav > li > a:hover {
+    background-color: #E02E01;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, .navbar-inverse .navbar-toggle, .navbar-default .navbar-collapse, .navbar-default .navbar-form, .navbar-default .navbar-toggle, header.navbar.navbar-collapse, header.navbar.navbar-form, header.navbar.navbar-toggle {
+    border-color: #E02E01;
+}
+
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:active, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, header.navbar.navbar-nav > .open > a, header.navbar.navbar-nav > .open > a:hover, header.navbar.navbar-nav > .open > a:focus {
+    background-color: #E02E01;
+}
+
+body header.navbar .nav .active > a, body .navbar .nav .active > a:hover, .navbar.navbar-fixed-top #main-menu li a:hover {
+    background-color: #E02E01;
+}
+
+body header.navbar .nav > li > a:hover {
+    color: #FFFFFF;
+}
+
+body a {
+    color: #137AAA;
+}
+
+body a:hover {
+    color: #0B4965;
+}
+
+body .footer {
+    background-color: #FFFFFF;
+}
+
+body .footer .navbar ul.footer-links > li > a {
+    color: #0B4965;
+}
+
+body .footer .navbar ul.footer-links > li > a:hover {
+    color: #0B4965;
+}
+
+body .btn {
+    background-color: #009FD0;
+}
+
+body .btn {
+    color: #FFFFFF;
+}
+
+body .btn:hover, body .btn:focus, body .btn:active, body .open .dropdown-toggle.btn {
+    background-color:;
+    color:;
+}
+
+.navbar-nav > li > span {
+    color: #FFFFFF;
+}
+
+.navbar-nav > li > span:hover {
+    color: #FFFFFF;
+}
+
+.navbar-nav > li.expanded span:hover, .navbar-nav > li.expanded.active {
+    background-color: #E02E01;
+}
+
+.navbar-nav > li > span > span.caret {
+    border-bottom-color: #FFFFFF;
+    border-top-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.modal-body #user-register-form .form-type-password.col-md-4 {
+    width: 100%;
+}
+
+.footer.footer-fixed-bottom {
+    position: static;
+}
+
+body #resource_URL input, #method_content [data-role='method_url_container'], #method_content .url_container > p > span, [data-role='method_url_container'] span span span.template_param {
+    font-family: Courier, 'Courier New', monospace;
+}

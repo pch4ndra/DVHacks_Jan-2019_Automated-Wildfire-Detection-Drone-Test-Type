@@ -1,0 +1,147 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0px;
+    margin: 0px;
+}
+
+#example {
+    min-width: 320px;
+    min-height: 400px;
+    height: 400px;
+    margin: auto;
+    padding: 10px 10px 0 10px;
+}
+
+#go-back-link {
+    text-decoration: none;
+}
+
+#go-back-link div {
+    margin: 5px;
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+#left h5 {
+    color: #424542;
+}
+
+#open {
+    padding: 0 50px;
+    font-size: smaller;
+}
+
+#actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+    #actions {
+        flex-direction: column;
+    }
+    #actions .btn {
+        margin: 5px;
+    }
+}
+
+#code {
+    margin: 0 0 100px;
+    font-size: 0.8em;
+}
+
+#left li {
+    background: transparent url("../img/arrow_v4.png") 0 1px no-repeat;
+    padding-left: 12px;
+}
+
+#left ul {
+    list-style: none;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.lang {
+    display: inline;
+}
+
+pre.prettyprint {
+    background-color: #FFF;
+    white-space: pre-wrap;
+    padding: 15px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.ui-dialog {
+    font-family: "Gotham SSM Book", Helvetica, Arial, sans-serif;
+}
+
+.ui-corner-all {
+    border-radius: 0;
+}
+
+.ui-dialog-titlebar {
+    color: #333;
+    margin: 5px 10px;
+    background: #F1F1F2;
+    border-color: #DDD;
+    border-radius: 25px;
+}
+
+.ui-dialog-title {
+    padding: 15px;
+}
+
+.section-header {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.geoResponse-result div:first-child,
+.geoResponse-result-distance {
+    font-weight: 700;
+}
+
+.geoResponse-result-distance {
+    color: #737573;
+}
+.jssdk-menu-group-elements {
+    overflow: hidden;
+    display: none;
+}
+
+.og-context .region-sidebar-first .block-book .nav li.dhtml-menu.first.last > a:hover,
+.og-context .region-sidebar-first .block-book .nav li.dhtml-menu.first.last > a:active,
+.og-context .region-sidebar-first .block-book .nav li.dhtml-menu.first.last > a.active {
+    margin-left: -8px;
+}
+
+button.menu-icon {
+    position: absolute;
+    top: 6px;
+    left: -15px;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 6px;
+    background-image: url("../img/arrow_v3.gif");
+    background-repeat: no-repeat;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
